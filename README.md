@@ -41,4 +41,4 @@ Tarefas-extras:
 
 * Enviar um e-mail (SMTP) com a confirmação do pedido.
 
-
+ok
