@@ -85,6 +85,19 @@ class Banco {
 		return $produtos;
 	}
 
+	public function getProdutosAleatorio() {
+		$strsql = "select p.* from produtos as p order by rand() limit 2";
+
+		$resultados = $this->getResultsBD($strsql);
+	
+		$produtos = array();
+		while ($linha = $resultados->fetch_object()) {
+			$produtos[] = $this->fetchProduto($linha);
+		}
+
+		return $produtos;
+	}
+
 	public function login($email, $senha) {
 		$senha = md5($senha);
 		$strsql = "select * from clientes where email = '$email' and senha = '$senha'";
